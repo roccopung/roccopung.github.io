@@ -1,0 +1,308 @@
+@charset "UTF-8";
+
+@font-face {
+   font-family: -apple-system;
+}
+
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, li, a {
+  text-decoration: none;
+  font-family: -apple-system;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system;
+  font-style: normal;
+}
+
+h4 {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.vimeo-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+pointer-events: none;
+overflow: hidden;
+}
+.vimeo-wrapper iframe {
+width: 100vw;
+height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+min-height: 100vh;
+min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+position: absolute;
+top: 50%;
+left: 50%;
+}
+
+.elem-wrap {
+  display: block;
+  max-width: 80px;
+  position: absolute;
+  text-align: center;
+  justify-self: center;
+}
+
+.draggable {
+  touch-action: none;
+  user-select: none;
+}
+
+#elem-1 {
+  top: 100px;
+  left: 50%;
+  text-align: center;
+}
+
+#elem-2 {
+  top: 200px;
+  left: 200px;
+  text-align: center;
+}
+
+#elem-3 {
+  top: 300px;
+  left: 70%;
+  text-align: center;
+}
+
+#elem-4 {
+  top: 55px;
+  left: 80%;
+  text-align: center;
+}
+
+#elem-5 {
+  top: 200px;
+  left: 10%;
+  text-align: center;
+}
+
+#elem-6 {
+  top: 60px;
+  left: 90%;
+  text-align: center;
+}
+
+
+
+
+.elem-fig {
+  max-width: 70px;
+  max-height: 60px;
+}
+
+.thumb-img {
+  border: 2px solid #fff;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
+}
+
+.elem-caption {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 1);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Sans Serif", Icons;
+	font-style: normal;
+	line-height: 1.5;
+  text-shadow: 1px 1px 3px #000;
+	margin-left: -1rem;
+  margin-right: -1rem;
+  box-sizing: border-box;
+}
+
+.body-folders {
+  background-color: rgb(50, 50, 50);
+}
+
+.container-folders {
+  padding: 10px;
+  padding-top: 5vh;
+  max-width: 90vw;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* fake-header */
+
+.fake-header-handler {
+  width: inherit;
+  height: 55px;
+  display: block;
+  z-index: 2;
+}
+
+.ios-header {
+  background-color: #dadada;
+  position: sticky;
+  z-index:2;
+  width: 100%;
+  height: 55px;
+  border-bottom: 0.7px solid rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(200px, 2fr) 0.5fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-radius: 6px 6px 0 0;
+}
+
+.ios-buttons {
+  grid-area: 1 / 1 / 2 / 2;
+  margin: 5px;
+  margin-top: 2px;
+}
+
+.ios-buttons img {
+  height: 11px;
+}
+
+.ios-arrows {
+  grid-area: 2 / 1 / 3 / 2;
+  margin: 5px;
+  margin-top: 2px;
+}
+
+.ios-arrows img,
+.ios-menu img,
+.ios-search img {
+  height: 22px;
+}
+
+.ios-menu {
+  grid-area: 2 / 2 / 3 / 3;
+  margin: 5px;
+  margin-top: 2px;
+}
+
+.ios-search {
+  grid-area: 2 / 3 / 3 / 4;
+  margin: 5px;
+  margin-top: 2px;
+}
+
+.ios-search img {
+  position: absolute;
+  right: 5px;
+  display: block;
+}
+
+@media only screen and (max-width: 800px) {
+  .ios-search img {
+    display: none;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 2.5fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+aside {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: #c4c3c6;
+  min-height: 200px;
+  overflow-x: hidden;
+  border-right:  0.7px solid rgba(0, 0, 0, 0.2);
+}
+
+aside h4 {
+  padding: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.50);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Sans Serif", Icons;
+	font-style: normal;
+}
+
+
+aside ul li {
+  display: block;
+  height: 30px;
+  width: 100%;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  font-size:0.83rem;
+  color: rgba(51, 48, 42, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Sans Serif", Icons;
+	font-style: normal;
+}
+
+aside .active {
+  background-color:rgb(143, 141, 141);
+}
+
+aside ul li:active {
+  background-color: rgb(143, 141, 141)
+}
+
+i {
+ display: inline-block;
+ padding-right: 10px;
+}
+
+.gallery {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 135px));
+  grid-template-rows: max-content;
+  overflow-y: scroll;
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.gallery div {
+  margin: 30px;
+  position: relative;
+  height: auto;
+  /* display: flex; */
+  align-items: flex-end;
+}
+
+.gallery div figcaption {
+  color: #000;
+  text-shadow: none;
+  font-weight: 400;
+}
+
+.ios-footer {
+  width: 100%;
+  height: 22px;
+  background-color: #dadada;
+  border-radius: 0 0 6px 6px;
+  border-top:  0.7px solid rgba(0, 0, 0, 0.2);
+}
+
+.d-none {
+  display: none;
+}
+
+#elem-welcome {
+  top: 120px;
+  right: 200px;
+  text-align: center;
+}
